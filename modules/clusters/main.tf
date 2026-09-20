@@ -1,4 +1,4 @@
-resource "databricks_cluster" "this" {
+resource "databricks_cluster" "name" {
   for_each = local.clusters
 
   cluster_name             = each.value.cluster_name
@@ -26,8 +26,4 @@ resource "databricks_permissions" "cluster" {
       permission_level = "CAN_RESTART"
     }
   }
-}
-
-output "cluster_ids" {
-  value = { for k, v in databricks_cluster.this : k => v.id }
 }
