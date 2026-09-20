@@ -1,8 +1,5 @@
 locals {
-  # NOTE: exact autoscale bounds / autotermination minutes were partly
-  # illegible in the source screenshot (columns were badly cropped). Values
-  # below reflect what could be read (min 1 / max 2 workers, "Shared
-  # Cluster", "Can Restart" access) - confirm and adjust as needed.
+ 
   clusters = {
     documind_poc = {
       cluster_name             = "EDP_AI_AB_CLAIMS_DOCUMIND_POC_RND_PROD"
