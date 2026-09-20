@@ -11,7 +11,7 @@ locals {
   ]...)
 }
 
-resource "databricks_volume" "this" {
+resource "databricks_volume" "volume" {
   for_each = local.volume_pairs
 
   name              = each.value.name
@@ -19,9 +19,6 @@ resource "databricks_volume" "this" {
   schema_name       = split(".", each.value.schema)[1]
   volume_type       = "EXTERNAL"
   storage_location  = each.value.path
-  comment           = "Unstructured file access volume for ${each.key}"
+##  comment           = "Unstructured file access volume for ${each.key}"
 }
 
-output "volume_names" {
-  value = { for k, v in databricks_volume.this : k => v.name }
-}
