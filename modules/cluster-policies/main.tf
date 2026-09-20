@@ -6,7 +6,7 @@ locals {
   ]))
 }
 
-resource "databricks_cluster_policy" "this" {
+resource "databricks_cluster_policy" "policy" {
   name       = local.policy_name
   definition = jsonencode(local.definition)
 }
