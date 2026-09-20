@@ -22,11 +22,3 @@ resource "databricks_permissions" "cluster_policy" {
     }
   }
 }
-
-output "policy_id" {
-  value = databricks_cluster_policy.this.id
-}
-
-output "policy_name" {
-  value = databricks_cluster_policy.this.name
-}
